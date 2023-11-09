@@ -1,0 +1,39 @@
+.content {
+  background-color: rebeccapurple;
+  min-height: 100vh;
+  background-image: linear-gradient(red, blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 80%;
+  height: 400px;
+  display: flex;
+  box-shadow: 0 0 5px 5px rgba(2, 2, 43, 0.546);
+}
+.leftSide {
+  flex-grow: 3;
+  flex-basis: 30%;
+  background-image: linear-gradient(red, blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rightSide {
+  flex-basis: 70%;
+
+  flex-grow: 7;
+  background-image: linear-gradient(white 35%, blue 130%);
+}
+.leftTitle {
+  font-size: 50px;
+  color: white;
+  font-weight: bolder;
+}
+.image {
+  width: 25%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px var(--mainOrangered);
+}

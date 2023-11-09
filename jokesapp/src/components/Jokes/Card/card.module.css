@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  border-bottom: 1px solid var(--mainOrangered);
+  padding: 16px;
+  font-size: 16px;
+}
+.emoji {
+  font-size: 50px;
+}
+.vote {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.vote span {
+  width: 20px;
+  height: 20px;
+  padding: 6px;
+  border: 3px solid var(--mainOrangered);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--mainOrangered);
+  font-size: 12px;
+  font-weight: 500;
+}
+.vote button {
+  background-color: var(--mainOrangered);
+  border-radius: 40%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.vote button :active {
+  transform: scale(0.95);
+}
