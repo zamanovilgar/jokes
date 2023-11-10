@@ -1,8 +1,30 @@
 import React from "react";
 import styles from "./jcontent.module.css";
 import JokesCard from "../Card";
+import { smiles } from "../../../constant/smiles";
 
-const JokesContent = () => {
+const JokesContent = ({ data, onAzalt, onArtir }) => {
+  const handleEmoji = (i) => {
+    let emoji;
+
+    if (i <= 3) {
+      emoji = smiles.smile1;
+    }
+    if (i <= 6 && i >= 3) {
+      emoji = smiles.smile3;
+    }
+    if (i <= 8 && i >= 6) {
+      emoji = smiles.smile2;
+    }
+    if (i == 8) {
+      emoji = smiles.smile4;
+    }
+    if (i == 9) {
+      emoji = smiles.smile5;
+    }
+    return emoji;
+  };
+
   return (
     <div className={styles.content}>
       <div className={styles.box}>
@@ -14,12 +36,18 @@ const JokesContent = () => {
           />
         </div>
         <div className={styles.rightSide}>
-          <JokesCard />
-          <JokesCard />
-          <JokesCard />
-          <JokesCard />
-          <JokesCard />
-
+          {data?.map((item, index) => {
+            const emoji = handleEmoji(index);
+            return (
+              <JokesCard
+                vote={item.vote}
+                text={item.joke}
+                emoji={emoji}
+                onDecrement={() => onAzalt(index)}
+                onIncrement={() => onArtir(index)}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

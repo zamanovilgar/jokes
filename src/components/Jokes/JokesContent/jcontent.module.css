@@ -22,6 +22,7 @@
   justify-content: center;
 }
 .rightSide {
+  overflow: auto;
   flex-basis: 70%;
 
   flex-grow: 7;

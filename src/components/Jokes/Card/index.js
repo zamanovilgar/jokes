@@ -1,19 +1,23 @@
 import React from "react";
 import styles from "./card.module.css";
 
-
-const JokesCard = () => {
+const JokesCard = ({
+  text = "Lorem ipsum",
+  emoji = "🤣",
+  vote = 0,
+  onDecrement,
+  onIncrement,
+}) => {
   return (
     <div className={styles.card}>
-        <div className={styles.vote}>
-            <button >-</button>
-            <span>22</span>
-            <button>+</button>
+      <div className={styles.vote}>
+        <button onClick={onDecrement}>-</button>
+        <span>{vote}</span>
+        <button onClick={onIncrement}>+</button>
+      </div>
+      <p>{text}</p>
 
-        </div>
-      <p>Lorem ipsum</p>
-
-      <div className={styles.emoji}>🤣</div>
+      <div className={styles.emoji}>{emoji}</div>
     </div>
   );
 };
